@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 class BookRating extends StatelessWidget {
   final double score;
   const BookRating({
-    Key key,
-    this.score,
+    Key? key,
+    required this.score,
   }) : super(key: key);
 
   @override
