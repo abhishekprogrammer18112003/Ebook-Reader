@@ -176,13 +176,13 @@ class ChapterCard extends StatelessWidget {
   final String name;
   final String tag;
   final int chapterNumber;
-  final Function press;
+  final void Function() press;
   const ChapterCard({
-    Key key,
-    this.name,
-    this.tag,
-    this.chapterNumber,
-    this.press,
+    Key? key,
+    required this.name,
+    required this.tag,
+    required this.chapterNumber,
+    required this.press,
   }) : super(key: key);
 
   @override
@@ -239,8 +239,8 @@ class ChapterCard extends StatelessWidget {
 
 class BookInfo extends StatelessWidget {
   const BookInfo({
-    Key key,
-    this.size,
+    Key? key,
+    required this.size,
   }) : super(key: key);
 
   final Size size;
@@ -262,8 +262,8 @@ class BookInfo extends StatelessWidget {
                       "Crushing &",
                       style: Theme.of(context)
                           .textTheme
-                          .headline4
-                          .copyWith(fontSize: 28),
+                          .headlineMedium
+                          ?.copyWith(fontSize: 28),
                     ),
                   ),
                   Container(
@@ -272,7 +272,7 @@ class BookInfo extends StatelessWidget {
                     padding: EdgeInsets.only(top: 0),
                     child: Text(
                       "Influence",
-                      style: Theme.of(context).textTheme.subtitle1.copyWith(
+                      style: Theme.of(context).textTheme.titleMedium?.copyWith(
                             fontSize: 25,
                             fontWeight: FontWeight.bold,
                           ),
